@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <MediaElement x:Name="media" LoadedBehavior="Manual" MediaOpened="media_MediaOpened"/>
+        <Slider x:Name="audioSlider" Grid.Row="3" Grid.ColumnSpan="6" ValueChanged="audioSlider_ValueChanged"/>
+        <Slider x:Name="VolumeSlider" Grid.Column="6" Grid.Row="4" ValueChanged="VolumeSlider_ValueChanged"/>
+        <Button x:Name="back" Content="Назад"  Grid.Row="4" Click="back_Click" />
+        <Button x:Name="play" Content="Играть"  Grid.Row="4" Grid.Column="1" Click="play_Click" />
+        <Button x:Name="Pause1" Content="Пауза"  Grid.Row="4" Grid.Column="2" Click="next_Click"/>
+        <Button x:Name="next" Content="Вперед" Grid.Row="4" Grid.Column="3" Click="repeat_Click" />
+        <Button x:Name="randomize" Content="Перемешать"  Grid.Row="4" Grid.Column="4" Click="random_Click"/>
+        <Button x:Name="open_folder" Content="Открыть папку с музыкой" Grid.ColumnSpan="4" Click="open_folder_Click"/>
+        <Button x:Name="history" Content="История прослушивания" Grid.Column="4" Grid.ColumnSpan="2" Click="history_Click"/>
+        <TextBlock x:Name="NowTime"
+            Grid.Column="0" Grid.Row="2"/>
+
+        <TextBlock x:Name="RemainingTime"
+            Grid.Column="5" Grid.Row="2"/>
+        <ListBox x:Name="songList" Grid.Row="1" Grid.ColumnSpan="6" SelectionChanged="songList_SelectionChanged"/>
+
+
+    </Grid>
+</Window>
